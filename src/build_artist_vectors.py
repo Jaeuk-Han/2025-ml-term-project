@@ -10,7 +10,8 @@ import pandas as pd
 
 
 # Note: 이 코드는 artist 단위 벡터 제작코드로 spotify 데이터셋을 입력 받아 가중합을 통해 아티스트 당 하나의 특성 벡터를 출력합니다.
-
+# 입력: artist.csv, track.csv, Last.fm_data.csv
+# 출력: artist_features_weighted.csv(아티스트), artist_genre_aggregates.csv(장르별), coverage.json(last.fm과의 매칭 비율 사전 확인)
 
 # text preprocessing util of artist name (simple norm because will normalize again)
 def normalize_key(text: str) -> str:

@@ -2,6 +2,10 @@ import argparse, json
 from pathlib import Path
 import pandas as pd
 
+# Note: 이 코드는 아티스트 이름 을 정규화 한 뒤 last.fm과 스포티파이 데이터셋을 join 하는 작업을 수행합니다.
+# 입력: last.fm 데이터(Last.fm_data.csv), spotify artist vecter 데이터(artist_features_weighted.csv)
+# 출력: user name, artist vecter, plays(user가 artist의 곡을 얼마나 들었는가?)
+
 # normalize artist name for join (hard norm)
 def make_key_series(s: pd.Series, mode: str):
     if mode == "exact":
