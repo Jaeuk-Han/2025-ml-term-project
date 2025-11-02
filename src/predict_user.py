@@ -61,12 +61,6 @@ def collect_seen_items(
     user_map: pd.DataFrame,
     artist_map: pd.DataFrame,
 ) -> Set[int]:
-    """
-    이미 본 아이템 집합 만들기.
-    허용 입력:
-      - (user_id, artist_id[, plays]) 형식
-      - (Username, Artist[, plays]) 형식 → 매핑 사용
-    """
     if not interactions_csv:
         return set()
 
