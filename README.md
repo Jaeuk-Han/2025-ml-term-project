@@ -8,7 +8,7 @@ ML_SHARE/
 │  ├─ spotify/                # 원본 Spotify (artists.csv, tracks.csv 등)
 │  │  ├─ artists.csv
 │  │  └─ tracks.csv
-│  ├─ spotify_sample/         # 소용량 샘플
+│  ├─ spotify_sample/         # 소용량 샘플 (테스트 / 디버깅용으로 사용)
 │  │  ├─ artists_sample.csv
 │  │  └─ tracks_sample.csv
 │  └─ derived/                # 모든 산출물(자동 생성)
