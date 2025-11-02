@@ -5,6 +5,7 @@ from typing import Optional, Set, Tuple
 import numpy as np
 import pandas as pd
 
+# Note: 이 코드는 훈련된 모델을 불러 추론을 진행합니다.
 
 # model loader
 def load_model(model_npz_path: str) -> Tuple[np.ndarray, np.ndarray]:
