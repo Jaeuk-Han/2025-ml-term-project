@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # root에서 bash run_join.sh로 실행
+set -euo pipefail
 
 poetry run python src/join_lastfm_spotify.py \
   --lastfm_csv data/lastfm/Last.fm_data.csv \

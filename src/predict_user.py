@@ -5,7 +5,7 @@ from typing import Optional, Set, Tuple
 import numpy as np
 import pandas as pd
 
-# Note: 이 코드는 훈련된 모델을 불러 추론을 진행합니다.
+# Note: 이 코드는 훈련된 als 모델을 불러 추론을 진행합니다.
 
 # model loader
 def load_model(model_npz_path: str) -> Tuple[np.ndarray, np.ndarray]:
@@ -62,6 +62,12 @@ def collect_seen_items(
     user_map: pd.DataFrame,
     artist_map: pd.DataFrame,
 ) -> Set[int]:
+    """
+    이미 본 아이템 집합 만들기.
+    허용 입력:
+      - (user_id, artist_id[, plays]) 형식
+      - (Username, Artist[, plays]) 형식 → 매핑 사용
+    """
     if not interactions_csv:
         return set()
 

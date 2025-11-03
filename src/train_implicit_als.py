@@ -8,6 +8,8 @@ from scipy.sparse import csr_matrix
 from implicit.als import AlternatingLeastSquares
 from implicit.nearest_neighbours import bm25_weight, tfidf_weight
 
+# Note: als 모델을 학습시키는 역할을 수행하는 코드입니다.
+
 # dir check util
 def ensure_dir(p: str):
     Path(p).mkdir(parents=True, exist_ok=True)

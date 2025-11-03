@@ -15,7 +15,6 @@ import pandas as pd
 
 # text preprocessing util of artist name (simple norm because will normalize again)
 def normalize_key(text: str) -> str:
-    """Lowercase, strip accents, remove non-alnum (keep only [a-z0-9])."""
     if pd.isna(text):
         return ""
     text = unicodedata.normalize("NFKD", str(text))
@@ -24,7 +23,6 @@ def normalize_key(text: str) -> str:
 
 # string parse util
 def parse_listlike(x):
-    """Parse list-like strings such as "['a','b']" into list; pass lists through."""
     if isinstance(x, list):
         return x
     s = str(x)
@@ -126,9 +124,12 @@ def build_artist_vectors(
         for tid, aids in track_to_artists.items():
             if not isinstance(aids, list) or len(aids) == 0:
                 continue
+
             union_g = set().union(*[artist_genre_set.get(str(a), set()) for a in aids])
+
             if not union_g:
                 continue
+            
             # fill only artists that have empty genre set
             for a in aids:
                 a = str(a)
@@ -158,6 +159,7 @@ def build_artist_vectors(
 
     # aggregation into genre with mean and mode
     agg_dict = {c: "mean" for c in num_cols}
+
     for c in cat_cols:
         agg_dict[c] = mode_safe
     per_ag = tracks_expl.groupby(["artist_id", "genre"]).agg(agg_dict).reset_index()
@@ -203,6 +205,7 @@ def build_artist_vectors(
     # Save the result
     artist_features.to_csv(out_features_csv, index=False)
     per_ag.to_csv(out_per_genre_csv, index=False)
+
     if coverage is not None:
         with open(out_coverage_json, "w", encoding="utf-8") as f:
             json.dump(coverage, f, ensure_ascii=False, indent=2)
