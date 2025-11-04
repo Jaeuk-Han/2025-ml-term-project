@@ -150,3 +150,17 @@
 ├─ README.md                                    # 파이프라인/명령어/결과 요약
 └─ pyproject.toml                               # poetry 의존성
 ```
+
+---
+
+## reference
+
+[[IEEE] Collaborative Filtering for Implicit Feedback Datasets](https://ieeexplore.ieee.org/document/4781121)
+
+[Lightgbm documentation](https://lightgbm.readthedocs.io/en/stable/)
+
+[implicit github](https://benfred.github.io/implicit/)
+
+[Tech Blog 1](https://medium.com/radon-dev/als-implicit-collaborative-filtering-5ed653ba39fe)
+
+[Tech Blog 2](https://blog.reachsumit.com/posts/2022/09/explicit-implicit-cf/)
