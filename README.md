@@ -1,5 +1,7 @@
 # 🎵 ML Term Project — Music Recommendation & Personalized Playlist 🎵
 
+![데모 전체 스크린샷](main.png)
+
 ## 1) Overview
 본 프로젝트는 <strong>Last.fm 재생 로그</strong>와 <strong>Spotify 메타/오디오 피처</strong>를 결합하여<br>
 <strong>2-Stage 추천(ALS → LGBM LambdaRank 리랭커)</strong>로 유저별 아티스트를 추천하고,<br>
