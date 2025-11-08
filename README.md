@@ -18,9 +18,9 @@
 ## 3) Final Scoring Design (Weighted Average)
 최종 점수는 **ALS + 리랭커**의 결합 점수(Base)에 **tempo/valence 유사도**를 가중 평균으로 반영합니다.
 
-\[
+$$
 \mathbf{FinalScore} = 0.6 \cdot \text{Base\_score} + 0.2 \cdot \text{Tempo\_sim} + 0.2 \cdot \text{Valence\_sim}
-\]
+$$
 
 | 구성요소        | 의미                                         | 비중 |
 |----------------|----------------------------------------------|:---:|
